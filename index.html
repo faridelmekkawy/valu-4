@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkie Jackpot</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app" id="appRoot">
+      <section class="start-screen panel" id="startScreen" aria-labelledby="startTitle">
+        <img src="./Value-Logo.png" alt="Valu Logo" class="valu-logo small" onerror="this.classList.add('img-fallback')" />
+        <h1 id="startTitle">Sparkie Jackpot</h1>
+        <p class="subtitle">Las Vegas edition — one spin per player.</p>
+        <form id="startForm" class="start-form" autocomplete="off">
+          <label for="playerName" class="sr-only">Player Name</label>
+          <input id="playerName" name="playerName" type="text" maxlength="24" placeholder="Player name" required />
+          <button type="submit" class="btn-primary">Start Game</button>
+        </form>
+      </section>
+
+      <section class="game-screen hidden" id="gameScreen" aria-live="polite">
+        <header class="top-bar panel">
+          <img src="./Value-Logo.png" alt="Valu Logo" class="valu-logo" onerror="this.classList.add('img-fallback')" />
+          <div>
+            <h2>Sparkie Jackpot</h2>
+            <p class="meta">Vegas Cabinet Style</p>
+          </div>
+        </header>
+
+        <section class="status panel">
+          <div><strong>Player:</strong> <span id="playerNameLabel">-</span></div>
+          <div><strong>Score:</strong> <span id="scoreLabel">0</span></div>
+          <div><strong>Best:</strong> <span id="bestScoreLabel">0</span></div>
+          <div><strong>Spins Left:</strong> <span id="spinCountLabel">1</span></div>
+          <div><strong>Streak:</strong> <span id="jackpotStreakLabel">0</span></div>
+        </section>
+
+        <section class="machine cabinet" id="machinePanel">
+          <div class="bulbs" aria-hidden="true"></div>
+          <div class="marquee">
+            <div class="mega">MEGA</div>
+            <div class="slots">SLOTS</div>
+          </div>
+
+          <div class="sparkie-wrap">
+            <img src="./sparkie_player.png" alt="Sparkie character" class="sparkie" onerror="this.classList.add('img-fallback')" />
+          </div>
+
+          <div class="reel-window">
+            <div class="reels" id="reels">
+              <div class="reel" data-index="0"><div class="symbol-container" id="symbol0"></div></div>
+              <div class="reel" data-index="1"><div class="symbol-container" id="symbol1"></div></div>
+              <div class="reel" data-index="2"><div class="symbol-container" id="symbol2"></div></div>
+            </div>
+          </div>
+
+          <div class="big-win-bar" id="bigWinBar">BIG WIN</div>
+        </section>
+
+        <section class="controls panel">
+          <button id="spinButton" class="btn-spin" type="button">SPIN</button>
+          <button id="muteButton" class="btn-muted" type="button" aria-pressed="false">Sound: Off</button>
+          <p id="resultMessage" class="result">You get one spin. Make it count.</p>
+          <p id="pointsPopup" class="points-popup" aria-hidden="true"></p>
+        </section>
+      </section>
+
+      <canvas id="fxCanvas" class="fx-canvas" aria-hidden="true"></canvas>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
