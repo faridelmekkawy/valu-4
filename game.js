@@ -16,10 +16,10 @@
   };
 
   const SYMBOLS = [
-    { key: 'coin_heart', src: '../coin_heart.png', rare: false },
-    { key: 'coin_wink', src: '../coin_wink.png', rare: false },
-    { key: 'coin_token', src: '../coin_token.png', rare: false },
-    { key: 'coin_card', src: '../coin_card.png', rare: true },
+    { key: 'coin_heart', src: './coin_heart.png', rare: false },
+    { key: 'coin_wink', src: './coin_wink.png', rare: false },
+    { key: 'coin_token', src: './coin_token.png', rare: false },
+    { key: 'coin_card', src: './coin_card.png', rare: true },
   ];
 
   const ui = {
